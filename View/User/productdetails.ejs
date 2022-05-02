@@ -1,0 +1,20 @@
+<%-include('../Includes/header.ejs')%>
+</head>
+  
+  <%-include('../Includes/navigation.ejs')%>
+    <br>
+    
+
+
+<div class="container" style="padding-left: 500px;">
+  <div class="card border-primary mb-3" style="max-width: 22rem;">
+    <div class="card-header">Product Details</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Product name : <%=data.title%></h5>
+      <h5 class="card-text">Price :  <%=data.price%> </h5>
+      <h5 class="card-text">Descrption: <%=data.description%></h5>
+    </div>
+  </div>
+</div>
+
+      <%-include('../Includes/footer.ejs')%>

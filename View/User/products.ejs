@@ -1,0 +1,41 @@
+<%-include('../Includes/header.ejs')%>
+</head>
+<body style="background-color: rgb(228, 228, 228);">
+  
+  <%-include('../Includes/navigation.ejs')%>
+    <br>
+    <%if(data.length>0){%>
+
+    <div class="container">
+        <form class="container d-flex" action="/search" method="post" style="width: 300px;">
+            <input class="form-control me-2" type="text" name="search" placeholder="Search" >
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+          </form>
+<br>
+        <div class="row">
+            <%for(let x of data){%>
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card border-primary" style="width: 20rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Product name : <%=x.title%></h5>
+                            <h5 class="card-text">Price :  <%=x.price%> </h5>
+                            <h5 class="card-text">Descrption: <%=x.description%></h5>  
+                            <a href="/details/<%=x._id%>">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+        </div>
+    </div>
+     <%}else{%>
+        <h1 style="text-align: center;">Data Not Found</h1>
+    <%}%>
+
+
+
+
+
+
+    
+
+      <%-include('../Includes/footer.ejs')%>
